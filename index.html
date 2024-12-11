@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Platform</title>
+    <script type="module" src="fetchAPI.js"></script>
+</head>
+<body>
+    <h1>Property Details</h1>
+    <button id="fetchData">Fetch Property Details</button>
+    <div id="propertyDetails"></div>
+
+    <script type="module">
+        import { fetchPropertyDetails } from './fetchAPI.js';
+
+        // Attach event listener to button
+        document.getElementById('fetchData').addEventListener('click', fetchPropertyDetails);
+    </script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+/* Other styles remain the same */
+
+.intro {
+    padding: 40px;
+    text-align: center;
+    background-color: rgba(248, 249, 250, 0.8);
+}
+
+.welcome-image {
+    max-width: 30%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 10px; /* Optional: Adds rounded corners */
+}
+
+.intro h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.intro p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.auth-buttons {
+    margin-top: 20px;
+}
+
+.auth-buttons .btn {
+    text-decoration: none;
+    background-color: #0066cc;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 5px;
+    margin: 5px;
+    font-size: 16px;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.auth-buttons .btn:hover {
+    background-color: #004080;
+}
+
+/* Navigation Bar Styles */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.menu {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 120px;
+}
+
+.menu li {
+    display: inline-block;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 8px 12px;
+    transition: color 0.3s;
+}
+
+.menu li a:hover {
+    color: #00bcd4; /* Highlight color on hover */
+}
+/* Styling for the 'Home' navigation item */
+.menu li a.current {
+    background-color: #0066cc; /* Blue background */
+    color: white; /* White text */
+    pointer-events: none; /* Makes the link unclickable */
+    cursor: default; /* Changes the cursor to indicate it's not clickable */
+    padding: 10px 20px;
+    border-radius: 0px; /* Optional: Rounded corners for consistency */
+    margin: -19px;
+}
+
+
+body {
+    background-image: url('background.jpg');
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+}
+
+footer {
+    background-color: #333; /* Matches the navigation bar's background color */
+    color: #fff; /* Matches the text color of the navigation bar */
+    padding: 20px;
+    text-align: center; /* Centers the text */
+}
+
+.footer-links a {
+    color: #fff; /* Matches the link color in the navigation bar */
+    text-decoration: none;
+    margin: 0 10px; /* Adds spacing between links */
+    font-weight: bold;
+}
+
+.footer-links a:hover {
+    color: #00bcd4; /* Matches the hover color of navigation links */
+}
+
+
+
+
