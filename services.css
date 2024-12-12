@@ -1,0 +1,57 @@
+body {
+    background-image: url('home.png'); /* Use the uploaded image as the background */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    font-family: 'Cinzel', serif; /* Apply the Cinzel font */
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 12px;
+    border-radius: 10px;
+    max-width: 900px;
+    margin: 20px auto;
+    color: #fff;
+    font-family: 'Cinzel', serif; /* Apply the Cinzel font */
+}
+
+h1, h2 {
+    color: #f0f0f0;
+    font-family: 'Cinzel', serif; /* Ensure headings use the font */
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 1);
+    color: #f0f0f0;
+    text-align: center;
+    padding: 10px 20px;
+    font-family: 'Cinzel', serif; /* Apply Cinzel font to the footer */
+}
+h1 {
+    font-size: 36px;
+    font-weight: 700; /* Use bold weight */
+}
+
+.home {
+    position: absolute; /* Position the link relative to the page */
+    top: 8px; /* Distance from the top */
+    left: 8px; /* Distance from the left */
+
+    color: rgb(1, 1, 1); /* Link text color */
+    text-decoration: none; /* Remove underline */
+    background-color: rgba(246, 246, 246, 0.7); /* Background color for better visibility */
+    padding: 5px 10px; /* Add padding for clickability */
+    border-radius: 5px; /* Rounded corners */
+    font-family: 'Cinzel', serif; /* Font family */
+    font-size: 14px; /* Adjust font size */
+    font-weight: bold; /* Bold text */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.home:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Change background color on hover */
+}
