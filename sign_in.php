@@ -22,8 +22,8 @@
             <label for="role"> Role: </label>
             <select id="role" name="role" required>
                 <option value="buyer">Buyer</option>
-                <option value="seller">Buyer</option>
-                <option value="admin">Buyer</option>
+                <option value="seller">seller</option>
+                <option value="admin">admin</option>
             </select>
 
             <button type="submit" class="btn">Sign Up</button>
@@ -31,3 +31,56 @@
     </main>
 </body>
 </html>
+
+<?php
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+if($_SERVER['REQUEST_METHOD'] == 'POST') {
+    //handle form submissions
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $password= $_POST['password'];
+    $role = $_POST['role'];
+
+    //hash the password for security
+
+    $password_hash = password_hash($password, PASSWORD_DEFAULT);
+
+    $host = "localhost";
+    $username_db = "username";
+    $password_db = "username";
+    $dbname = "username";
+
+    $conn = new mysqli($host, $username_db, $password_db, $dbname);
+
+    //check connection
+
+    if($conn->connect_error){
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    $sql = "INSERT INTO users (username, email, password_hash, role) VALUES (?, ?, ?, ?)";
+    $stmt = $conn->prepare($sql);
+
+    if($stmt === false) {
+        die("error preparing statement: " . $conn->error);
+    }
+    $stmt->bind_param("ssss", $username, $email, $password_hash, $role);
+
+    if($stmt->execute()){
+        echo "Registration successful!";
+    } else {
+        echo "Error: " . $stmt->error;
+    }
+
+    echo "Username: $username, Email: $email, Role: $role\n";
+    
+
+
+
+    $stmt->close();
+    $conn->close();
+}
+?>
