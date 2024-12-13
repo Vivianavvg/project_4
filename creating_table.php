@@ -1,13 +1,13 @@
 <?php
 
-$host="localhost";
-$username = "";
-$password = "";
-$dbname = "";
+$servername = "localhost";
+$username = "jvincent15";
+$password = "jvincent15";
+$dbname = "jvincent15";
 
     //create connection
 
-$conn = new mysqli($host, $username, $password, $dbname);
+$conn = mysqli_connect($servername, $username, $password, $dbname);
 
 if ($conn->connect_error){
     echo "could not connect to server\n";
@@ -18,9 +18,10 @@ else{
     echo "connection established\n";
 }
 //sql to create table
-$sqlDrop = "DROP TABLE IF EXISTS users;";
-$sqlCreate = "CREATE TABLE IF NOT EXISTS users (
+$sql = "CREATE TABLE IF NOT EXISTS users (
     id INT AUTO_INCREMENT PRIMARY KEY,
+    firstname Varchar(50) NOT NULL,
+    lastname Varchar(50) NOT NULL,
     username VARCHAR(50) NOT NULL,
     email VARCHAR(100) NOT NULL,
     password_hash VARCHAR(255) NOT NULL,
@@ -28,7 +29,7 @@ $sqlCreate = "CREATE TABLE IF NOT EXISTS users (
 
 )";
 
-if ($conn->query($sqlCreate) === TRUE ){
+if ($conn->query($sql) === TRUE ){
     echo "Table users created successfully";
 } else {
     echo "error creating table: " . $conn->error;
