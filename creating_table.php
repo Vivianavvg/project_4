@@ -1,9 +1,9 @@
 <?php
 
 $host="localhost";
-$username = "username";
-$password = "username";
-$dbname = "username";
+$username = "";
+$password = "";
+$dbname = "";
 
     //create connection
 
@@ -18,17 +18,17 @@ else{
     echo "connection established\n";
 }
 //sql to create table
-
-$sql = "CREATE TABLE IF NOT EXISTS users (
+$sqlDrop = "DROP TABLE IF EXISTS users;";
+$sqlCreate = "CREATE TABLE IF NOT EXISTS users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(50) NOT NULL,
     email VARCHAR(100) NOT NULL,
     password_hash VARCHAR(255) NOT NULL,
-    role VARCHAR(20) NOT NULL,
+    users_role VARCHAR(20) NOT NULL
 
 )";
 
-if ($conn->query($sql) === TRUE ){
+if ($conn->query($sqlCreate) === TRUE ){
     echo "Table users created successfully";
 } else {
     echo "error creating table: " . $conn->error;

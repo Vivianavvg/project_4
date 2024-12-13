@@ -9,7 +9,7 @@
 <body>
     <main class="auth-page">
         <h1>Create an account</h1>
-        <form action="process_signup.php" method="POST">
+        <form action="sign_in.php" method="POST">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
 
@@ -42,16 +42,16 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
     $email = $_POST['email'];
     $password= $_POST['password'];
-    $role = $_POST['role'];
+    $users_role = $_POST['role'];
 
     //hash the password for security
 
     $password_hash = password_hash($password, PASSWORD_DEFAULT);
 
     $host = "localhost";
-    $username_db = "username";
-    $password_db = "username";
-    $dbname = "username";
+    $username_db = "";
+    $password_db = "";
+    $dbname = "";
 
     $conn = new mysqli($host, $username_db, $password_db, $dbname);
 
@@ -61,22 +61,25 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "INSERT INTO users (username, email, password_hash, role) VALUES (?, ?, ?, ?)";
+    $sql = "INSERT INTO users (username, email, password_hash, users_role) VALUES (?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
 
     if($stmt === false) {
         die("error preparing statement: " . $conn->error);
     }
-    $stmt->bind_param("ssss", $username, $email, $password_hash, $role);
+    $stmt->bind_param("ssss", $username, $email, $password_hash, $users_role);
 
     if($stmt->execute()){
-        echo "Registration successful!";
+        header("Location: login.php");
+        exit();
     } else {
         echo "Error: " . $stmt->error;
     }
 
-    echo "Username: $username, Email: $email, Role: $role\n";
-    
+    echo "Username: $username, Email: $email, Role: $users_role\n";
+    error_log($stmt->error, 3, '/var/log/app_errors.log');
+    echo "An error occurred. Please try again.";
+
 
 
 
