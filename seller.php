@@ -39,7 +39,7 @@ $result = mysqli_query($conn, $sql);
     <header>
         <h1>Welcome, <?php echo $_SESSION['username']; ?> (Seller)</h1>
         <nav>
-            <a href="logout.php">Logout</a>
+            <a href="login.php">Logout</a>
         </nav>
     </header>
 
