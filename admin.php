@@ -17,18 +17,18 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Fetch total properties
-    $totalProperties = $conn->query("SELECT COUNT(*) FROM Property")->fetchColumn();
+    $totalProperties = $conn->query("SELECT COUNT(*) FROM properties")->fetchColumn();
 
     // Fetch properties
-    $propertiesStmt = $conn->prepare("SELECT * FROM Property");
+    $propertiesStmt = $conn->prepare("SELECT * FROM properties");
     $propertiesStmt->execute();
     $properties = $propertiesStmt->fetchAll(PDO::FETCH_ASSOC);
 
-    // Fetch top areas by property count
+    // Fetch top areas by properties count
     $topAreasStmt = $conn->prepare("
-        SELECT Address, COUNT(*) as total
-        FROM Property
-        GROUP BY Address
+        SELECT location, COUNT(*) as total
+        FROM properties
+        GROUP BY location
         ORDER BY total DESC
         LIMIT 5
     ");
@@ -113,26 +113,26 @@ try {
             </tr>
             <?php foreach ($topAreas as $area): ?>
                 <tr>
-                    <td><?php echo htmlspecialchars($area['Address']); ?></td>
+                    <td><?php echo htmlspecialchars($area['location']); ?></td>
                     <td><?php echo $area['total']; ?></td>
                 </tr>
             <?php endforeach; ?>
         </table>
     </section>
 
-    <!-- Property Listings Section -->
+    <!-- properties Listings Section -->
     <section class="center-content">
-        <h2>Property Listings</h2>
+        <h2>properties Listings</h2>
         <table border="1">
             <tr>
                 <th>ID</th>
-                <th>Address</th>
+                <th>location</th>
                 <th>Action</th>
             </tr>
-            <?php foreach ($properties as $property): ?>
+            <?php foreach ($properties as $properties): ?>
                 <tr>
-                    <td><?php echo htmlspecialchars($property['Property_ID']); ?></td>
-                    <td><?php echo htmlspecialchars($property['Address']); ?></td>
+                    <td><?php echo htmlspecialchars($properties['properties_ID']); ?></td>
+                    <td><?php echo htmlspecialchars($properties['location']); ?></td>
                 </tr>
             <?php endforeach; ?>
         </table>
