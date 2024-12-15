@@ -46,31 +46,54 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 ?>
 
-<!-- Add Property Form -->
-<form action="add_property.php" method="POST">
-    <label for="location">Location:</label><br>
-    <input type="text" name="location" required><br>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Property</title>
+    <link rel="stylesheet" href="style.css"> <!-- Add this line to include the stylesheet -->
+</head>
+<body>
 
-    <label for="price">Price:</label><br>
-    <input type="number" name="price" required><br>
+    <header>
+        <h1>Add a New Property</h1>
+        <nav>
+            <a href="seller.php">Back to Dashboard</a>
+        </nav>
+    </header>
 
-    <label for="num_bedrooms">Number of Bedrooms:</label><br>
-    <input type="number" name="num_bedrooms" required><br>
+    <main>
+        <h2>Fill in the details below:</h2>
 
-    <label for="num_bathrooms">Number of Bathrooms:</label><br>
-    <input type="number" name="num_bathrooms" required><br>
+        <form action="add_property.php" method="POST">
+            <label for="location">Location:</label><br>
+            <input type="text" name="location" required><br>
 
-    <label for="square_footage">Square Footage:</label><br>
-    <input type="number" name="square_footage" required><br>
+            <label for="price">Price:</label><br>
+            <input type="number" name="price" required><br>
 
-    <label for="age">Property Age (Years):</label><br>
-    <input type="number" name="age" required><br>
+            <label for="num_bedrooms">Number of Bedrooms:</label><br>
+            <input type="number" name="num_bedrooms" required><br>
 
-    <label for="has_garden">Has Garden:</label><br>
-    <input type="checkbox" name="has_garden"><br>
+            <label for="num_bathrooms">Number of Bathrooms:</label><br>
+            <input type="number" name="num_bathrooms" required><br>
 
-    <label for="has_parking">Has Parking:</label><br>
-    <input type="checkbox" name="has_parking"><br>
+            <label for="square_footage">Square Footage:</label><br>
+            <input type="number" name="square_footage" required><br>
 
-    <button type="submit" class="btn">Add Property</button>
-</form>
+            <label for="age">Property Age (Years):</label><br>
+            <input type="number" name="age" required><br>
+
+            <label for="has_garden">Has Garden:</label><br>
+            <input type="checkbox" name="has_garden"><br>
+
+            <label for="has_parking">Has Parking:</label><br>
+            <input type="checkbox" name="has_parking"><br>
+
+            <button type="submit" class="btn">Add Property</button>
+        </form>
+    </main>
+
+</body>
+</html>
