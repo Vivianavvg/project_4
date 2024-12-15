@@ -54,7 +54,7 @@ $result = mysqli_query($conn, $sql);
                         <img src="<?php echo $row['image_url']; ?>" alt="Property Image">
                         <h3><?php echo $row['location']; ?></h3>
                         <p>Price: $<?php echo number_format($row['price']); ?></p>
-                        <p>Bedrooms: <?php echo $row['bedrooms']; ?> | Bathrooms: <?php echo $row['bathrooms']; ?></p>
+                        <p>Bedrooms: <?php echo $row['num_bedrooms']; ?> | Bathrooms: <?php echo $row['num_bathrooms']; ?></p>
                         <p>Square Footage: <?php echo $row['square_footage']; ?> sqft</p>
                         <p>Garden: <?php echo $row['has_garden'] ? 'Yes' : 'No'; ?> | Parking: <?php echo $row['has_parking'] ? 'Yes' : 'No'; ?></p>
                         <a href="property_details.php?id=<?php echo $row['id']; ?>" class="btn">View Details</a>
@@ -63,12 +63,14 @@ $result = mysqli_query($conn, $sql);
                 <?php endwhile; ?>
             </div>
         <?php else: ?>
-            <!-- No properties listed, show the "Add Property" card -->
-            <div class="add-property-card">
-                <a href="add_property.php" class="btn add-property-btn">+ Add Property</a>
-                <p>You have not listed any properties yet. Click the button to add a new property.</p>
-            </div>
+            <!-- No properties listed -->
+            <p>You have not listed any properties yet. Click the button to add a new property.</p>
         <?php endif; ?>
+
+        <!-- Add Property Button - Always visible -->
+        <div class="add-property-card">
+            <a href="add_property.php" class="btn add-property-btn">+ Add Property</a>
+        </div>
 
     </main>
 
