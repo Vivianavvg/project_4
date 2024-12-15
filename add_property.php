@@ -94,6 +94,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <button type="submit" class="btn">Add Property</button>
         </form>
     </main>
-
 </body>
 </html>

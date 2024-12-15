@@ -2,9 +2,9 @@
 session_start(); // Start the session to store user data after login
 
 $servername = "localhost";
-$username = "jvincent15";
-$password = "jvincent15";
-$dbname = "jvincent15";
+$username = "vvacagonzalez1";
+$password = "vvacagonzalez1";
+$dbname = "vvacagonzalez1";
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -39,7 +39,7 @@ if ($result->num_rows > 0) {
 
         // Redirect based on the user's role
         if ($userData['users_role'] == 'buyer') {
-            header("Location: buyer.php");
+            header("Location: welcome_note.php");
         } elseif ($userData['users_role'] == 'seller') {
             header("Location: seller.php");
         } elseif ($userData['users_role'] == 'admin') {

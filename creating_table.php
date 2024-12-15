@@ -1,9 +1,9 @@
 <?php
 
 $servername = "localhost";
-$username = "jvincent15";
-$password = "jvincent15";
-$dbname = "jvincent15";
+$username = "vvacagonzalez1";
+$password = "vvacagonzalez1";
+$dbname = "vvacagonzalez1";
 
     //create connection
 
@@ -27,13 +27,31 @@ $sql = "CREATE TABLE IF NOT EXISTS users (
     password_hash VARCHAR(255) NOT NULL,
     users_role VARCHAR(20) NOT NULL
 
+
 )";
+
+$sql_insert_users = "INSERT INTO users(firstname, lastname, username, email, password_hash, users_role) VALUES
+    ('John', 'Doe', 'jdoe', 'jdoe@example.com', 'hashedpassword1', 'seller' ),
+    ('Jane' 'Smith', 'jsmith', 'jsmith@example.com', 'hashedpassword2', 'seller' ),
+    ('Emily', 'Davis', 'edavis', 'edavis@example.com', 'hashedpassword3', 'seller'),
+    ('Micheal', 'brown', 'mbrown', 'mbrown@example.com', 'hashedpassword4', 'seller')";
+
+if ($conn->query($sql_insert_users) === TRUE ){
+    echo " users inserted successfully";
+} else {
+    echo "error inserting users: " . $conn->error;
+}
 
 if ($conn->query($sql) === TRUE ){
     echo "Table users created successfully";
 } else {
     echo "error creating table: " . $conn->error;
 }
+
+
+//insert fake data into the new table
+
+
 
 // SQL to create the 'properties' table
 $sql_properties = "CREATE TABLE IF NOT EXISTS properties (
@@ -55,11 +73,48 @@ $sql_properties = "CREATE TABLE IF NOT EXISTS properties (
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 )";
 
-if ($conn->query($sql_properties) === TRUE) {
-    echo "Table 'properties' created successfully<br>";
+if ($conn->query($sql_properties) === TRUE ){
+    echo "Table 'properties' created successfully";
 } else {
-    echo "Error creating 'properties' table: " . $conn->error . "<br>";
+    echo "error creating properties: " . $conn->error;
 }
+
+
+
+
+    //SQL to insert values into properties table
+    $sql_insert_properties = "INSERT INTO properties ( 
+    
+        user_id,
+        location,
+        age,
+        floor_plan,
+        square_footage,
+        num_bedrooms,
+        num_bathrooms,
+        has_garden ,
+        has_parking,
+        nearby_facilities ,
+        nearby_roads,
+        property_tax ,           
+        price,
+        image_path
+    ) VALUES    
+
+    (1, '123 Peachtree St, Atlanta, GA 30303', 2014, 'floor_plan_1.jpg', 2300, 2, 2, 1, 1, 'Piedmont park', 'I-85', 52500.00, 750000.00, 'house_1.jpg'),
+    (2, '456 Piedmont Ave, Atlants, GA 30308', 1975, 'floor_plan_2', 2000, 4, 3, 1, 1, 'Piedmont park', 'I-75', 66500.0, 950000.00, 'house_2.jpg'),
+    (3, '789 Lenos Rd NE, Atlanta, GA 30324', 2001, 'floor_plan_3', 1500, 3, 2, 0, 1, 'lenox mall', 'MARTA', 38500.00, 550000.00, 'house_3.jpg'),
+    (4, '1010 Cascade Rd SW, Atlanta, GA 30311', 1998, 'floor_plan_4', 1800, 3, 2, 0, 1, 'GSU', 'MARTA', 42000.00, 600000.00, 'house_4.jpg')
+
+    ";
+
+    if ($conn->query($sql_insert_properties) === TRUE) {
+        echo "Properties inserted successfully.<br>";
+    } else {
+        echo "Error inserting properties" . $conn->error . "<br>";
+    }
+
 $conn->close();
 ?>
+  
     
