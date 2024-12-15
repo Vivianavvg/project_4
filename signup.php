@@ -57,7 +57,7 @@
 
         /* Move the form to the right center */
         .auth-page-wrapper {
-            position: absolute;
+            position: center;
             right: 50px;
             top: 20%;
         }
