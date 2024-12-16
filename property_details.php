@@ -8,9 +8,9 @@ if(!isset($_GET['id']) || empty($_GET['id'])) {
 
 // Database connection
 $servername = "localhost";
-$username = "vvacagonzalez1";
-$password = "vvacagonzalez1";
-$dbname = "vvacagonzalez1";
+$username = "jvincent15";
+$password = "jvincent15";
+$dbname = "jvincent15";
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 
