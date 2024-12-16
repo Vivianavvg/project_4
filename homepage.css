@@ -1,31 +1,26 @@
-/* Other styles remain the same */
-
-.intro {
+.intro{
     padding: 40px;
     text-align: center;
     background-color: rgba(248, 249, 250, 0.8);
+
 }
 
-.welcome-image {
+.welcome-image{
     max-width: 30%;
     height: auto;
     margin-bottom: 20px;
-    border-radius: 10px; /* Optional: Adds rounded corners */
+    border-radius: 10px;
 }
 
-.intro h1 {
+.intro h1{
     font-size: 36px;
     margin-bottom: 20px;
 }
 
-.intro p {
+intro p{
     font-size: 18px;
     color: #555;
     margin-bottom: 30px;
-}
-
-.auth-buttons {
-    margin-top: 20px;
 }
 
 .auth-buttons .btn {
@@ -40,11 +35,10 @@
     transition: background-color 0.3s;
 }
 
-.auth-buttons .btn:hover {
+.auth-buttons .btn:hover{
     background-color: #004080;
 }
 
-/* Navigation Bar Styles */
 header {
     background-color: #333;
     color: #fff;
@@ -67,59 +61,57 @@ header {
     gap: 120px;
 }
 
-.menu li {
+.menu li{
     display: inline-block;
 }
 
-.menu li a {
+.menu li a{
     text-decoration: none;
     color: #fff;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 8px 12px;
     padding: 8px 12px;
     transition: color 0.3s;
 }
-
 .menu li a:hover {
-    color: #00bcd4; /* Highlight color on hover */
+    color: #00bcd4;
 }
-/* Styling for the 'Home' navigation item */
+
 .menu li a.current {
-    background-color: #0066cc; /* Blue background */
-    color: white; /* White text */
-    pointer-events: none; /* Makes the link unclickable */
-    cursor: default; /* Changes the cursor to indicate it's not clickable */
+    background-color: #0066cc;
+    color: white;
+    pointer-events: none;
+    cursor: default;
+
     padding: 10px 20px;
-    border-radius: 0px; /* Optional: Rounded corners for consistency */
+    border-radius: 0px;
     margin: -19px;
 }
 
-
-body {
+body{
     background-image: url('background.jpg');
-    background-size: cover; /* Ensures the image covers the entire background */
-    background-position: center; /* Centers the image */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 footer {
-    background-color: #333; /* Matches the navigation bar's background color */
-    color: #fff; /* Matches the text color of the navigation bar */
+    background-color: #333;
+    color: #fff;
     padding: 20px;
-    text-align: center; /* Centers the text */
+    text-align: center;
 }
 
-.footer-links a {
-    color: #fff; /* Matches the link color in the navigation bar */
+.footer-links a{
+    color: #fff;
     text-decoration: none;
-    margin: 0 10px; /* Adds spacing between links */
+    margin: 0 10px;
     font-weight: bold;
 }
 
-.footer-links a:hover {
-    color: #00bcd4; /* Matches the hover color of navigation links */
+.footer-links a:hover{
+    color: #00bcd4;
 }
-
 
 
 
