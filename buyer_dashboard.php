@@ -111,12 +111,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         <?php if (!empty($properties)): ?>
             <?php foreach ($properties as $property): ?>
                     <div class="property-card">
-                        <h3><?php echo $row['location']; ?></h3>
-                        <p>Price: $<?php echo number_format($row['price']); ?></p>
-                        <p>Bedrooms: <?php echo $row['bedrooms']; ?> | Bathrooms: <?php echo $row['bathrooms']; ?></p>
-                        <p>Square Footage: <?php echo $row['square_footage']; ?> sqft</p>
-                        <p>Garden: <?php echo $row['has_garden'] ? 'Yes' : 'No'; ?> | Parking: <?php echo $row['has_parking'] ? 'Yes' : 'No'; ?></p>
-                        <a href="property_details.php?id=<?php echo $row['id']; ?>" class="btn">View Details</a>
+                        <h3><?php echo $property['location']; ?></h3>
+                        <p>Price: $<?php echo number_format($property['price']); ?></p>
+                        <p>Bedrooms: <?php echo $property['bedrooms']; ?> | Bathrooms: <?php echo $property['bathrooms']; ?></p>
+                        <p>Square Footage: <?php echo $property['square_footage']; ?> sqft</p>
+                        <p>Garden: <?php echo $property['has_garden'] ? 'Yes' : 'No'; ?> | Parking: <?php echo $property['has_parking'] ? 'Yes' : 'No'; ?></p>
+                        <a href="property_details.php?id=<?php echo $property['id']; ?>" class="btn">View Details</a>
                     </div>
             <?php endforeach; ?>
         <?php else: ?>

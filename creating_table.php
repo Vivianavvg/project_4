@@ -113,8 +113,6 @@ if ($conn->query($sql_properties) === TRUE ){
     } else {
         echo "Error inserting properties" . $conn->error . "<br>";
     }
-
-$conn->close();
 ?>
   
     
